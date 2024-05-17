@@ -24,6 +24,13 @@ app.get('/api/hello', (req, res) => {
   res.json({ msg: 'Hello' });
 });
 
+app.get('/api/notfound', (req, res) => {
+  // res.statusCode = 404;
+  // res.json({msg: 'not found'});
+
+  res.status(404).json({msg: 'not found'});
+});
+
 app.get('/api/users/:userId', (req, res) => {
   res.json({ msg: 'User ' + req.params.userId });
 });
